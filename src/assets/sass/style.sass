@@ -1,0 +1,37 @@
+body
+  font-family: Segoe UI,Helvetica Neue,Helvetica,Lucida Grande,Arial,Ubuntu,Cantarell,Fira Sans,sans-serif
+  background-image: linear-gradient(180deg, #eae6df, #d1d7db)
+
+
+@keyframes init
+  0%
+    opacity: 0
+    transform: scale(1.4)
+  to
+    opacity: 1
+    transform: scale(1)
+
+
+::-webkit-scrollbar
+  width: 0.375rem !important
+  height: 0.375rem !important
+::-webkit-scrollbar-thumb
+  background-color: rgba(11,20,26 ,.2)
+::-webkit-scrollbar-track
+  background: rgba(255,255,255 ,.1)
+
+
+#sidebar
+  transition: left 0.5s ease-in-out
+.left-0
+  left: 0
+
+
+
+
+.current-chat + .current-chat,
+.current-chat-owner + .current-chat-owner
+  top: -0.5rem
+  margin-bottom: 0.25rem
+  .rounded-2::before
+    display: none

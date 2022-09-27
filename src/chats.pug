@@ -1,0 +1,174 @@
+-
+  let chats = [
+    {
+      img: 'cesar.jfif',
+      name: 'Cesar JS',
+      date: 'now',
+      lastMessage: 'Felicidades !!'
+    },
+    {
+      img: 'user-img.svg',
+      name: 'Joseph V',
+      date: 'now',
+      lastMessage: 'Congratulations !'
+    },
+    {
+      active: true,
+      img: 'user-img.svg',
+      name: 'Recruiter',
+      date: 'five minutes ago',
+      lastMessage: 'Thank you very much, I will do my best.',
+      ownerOfTheLastMessage: true
+    },
+    {
+      img: 'user-img.svg',
+      name: '▒▒▒▒▒▒',
+      date: 'yesterday',
+      lastMessage: '░░░░░░░░░░░░░░░░░░░░░░░░░░'
+    },
+    {
+      img: 'user-img.svg',
+      name: '▒▒▒▒▒▒',
+      date: 'yesterday',
+      lastMessage: '░░░░░░░░░░░░░░░░░░░░░░░░░░'
+    },
+    {
+      img: 'user-img.svg',
+      name: '▒▒▒▒▒▒',
+      date: 'yesterday',
+      lastMessage: '░░░░░░░░░░░░░░░░░░░░░░░░░░'
+    },
+    {
+      img: 'user-img.svg',
+      name: '▒▒▒▒▒▒',
+      date: 'yesterday',
+      lastMessage: '░░░░░░░░░░░░░░░░░░░░░░░░░░'
+    },
+    {
+      img: 'user-img.svg',
+      name: '▒▒▒▒▒▒',
+      date: 'yesterday',
+      lastMessage: '░░░░░░░░░░░░░░░░░░░░░░░░░░'
+    },
+    {
+      img: 'user-img.svg',
+      name: '▒▒▒▒▒▒',
+      date: 'yesterday',
+      lastMessage: '░░░░░░░░░░░░░░░░░░░░░░░░░░'
+    },
+    {
+      img: 'user-img.svg',
+      name: '▒▒▒▒▒▒',
+      date: 'yesterday',
+      lastMessage: '░░░░░░░░░░░░░░░░░░░░░░░░░░'
+    },
+    {
+      img: 'user-img.svg',
+      name: '▒▒▒▒▒▒',
+      date: 'yesterday',
+      lastMessage: '░░░░░░░░░░░░░░░░░░░░░░░░░░'
+    },
+    {
+      img: 'user-img.svg',
+      name: '▒▒▒▒▒▒',
+      date: 'yesterday',
+      lastMessage: '░░░░░░░░░░░░░░░░░░░░░░░░░░'
+    },
+    {
+      img: 'user-img.svg',
+      name: '▒▒▒▒▒▒',
+      date: 'yesterday',
+      lastMessage: '░░░░░░░░░░░░░░░░░░░░░░░░░░'
+    },
+    {
+      img: 'user-img.svg',
+      name: '▒▒▒▒▒▒',
+      date: 'yesterday',
+      lastMessage: '░░░░░░░░░░░░░░░░░░░░░░░░░░'
+    },
+    {
+      img: 'user-img.svg',
+      name: '▒▒▒▒▒▒',
+      date: 'yesterday',
+      lastMessage: '░░░░░░░░░░░░░░░░░░░░░░░░░░'
+    },
+    {
+      img: 'user-img.svg',
+      name: '▒▒▒▒▒▒',
+      date: 'yesterday',
+      lastMessage: '░░░░░░░░░░░░░░░░░░░░░░░░░░'
+    },
+    {
+      img: 'user-img.svg',
+      name: '▒▒▒▒▒▒',
+      date: 'yesterday',
+      lastMessage: '░░░░░░░░░░░░░░░░░░░░░░░░░░'
+    },
+    {
+      img: 'user-img.svg',
+      name: '▒▒▒▒▒▒',
+      date: 'yesterday',
+      lastMessage: '░░░░░░░░░░░░░░░░░░░░░░░░░░'
+    },
+    {
+      img: 'user-img.svg',
+      name: '▒▒▒▒▒▒',
+      date: 'yesterday',
+      lastMessage: '░░░░░░░░░░░░░░░░░░░░░░░░░░'
+    },
+    {
+      img: 'user-img.svg',
+      name: '▒▒▒▒▒▒',
+      date: 'yesterday',
+      lastMessage: '░░░░░░░░░░░░░░░░░░░░░░░░░░'
+    },
+    {
+      img: 'user-img.svg',
+      name: '▒▒▒▒▒▒',
+      date: 'yesterday',
+      lastMessage: '░░░░░░░░░░░░░░░░░░░░░░░░░░'
+    },
+    {
+      img: 'user-img.svg',
+      name: '▒▒▒▒▒▒',
+      date: 'yesterday',
+      lastMessage: '░░░░░░░░░░░░░░░░░░░░░░░░░░'
+    },
+    {
+      img: 'user-img.svg',
+      name: '▒▒▒▒▒▒',
+      date: 'yesterday',
+      lastMessage: '░░░░░░░░░░░░░░░░░░░░░░░░░░'
+    },
+    {
+      img: 'user-img.svg',
+      name: '▒▒▒▒▒▒',
+      date: 'yesterday',
+      lastMessage: '░░░░░░░░░░░░░░░░░░░░░░░░░░'
+    },
+  ]
+
+  let currentChat = [
+    {
+      msg: "Hi Gerson, nice to meet you, I'm the company's recruiter, I'd like to know more about you.",
+    },
+    {
+      owner: true,
+      msg: "Hello dear, I am a web developer, I have experience in HTML, CSS, JavaScript, Angular, Vue, Node, NestJS, MongoDB, MySQL, SQL Server, Git, and I'm currently studying GraphQL in depth.",
+    },
+    {
+      msg: "That's great, How much experience do you have with these technologies?",
+    },
+    {
+      owner: true,
+      msg: "I have more than 6 years of experience developing web applications.",
+    },
+    {
+      msg: "That's great, I'll send you the test, you have 3 days to complete it, good luck.",
+    },
+    {
+      owner: true,
+      msg: "Thank you very much, I will do my best.",
+    },
+
+  ]

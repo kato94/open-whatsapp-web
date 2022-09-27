@@ -1,0 +1,113 @@
+include src/chats.pug
+
+doctype html
+html(lang="en" class="h-full w-full overflow-hidden")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+    link(rel="shortcut icon", href="favicon.png", type="image/x-icon")
+    meta(author="Gerson Ruiz")
+    meta(name="description", content="Whatsapp Web View by Gerson Ruiz")
+    meta(name="keywords", content="Whatsapp Web View, Frontend, Front-end, Gerson Ruiz Portfolio, Gerson Ruiz")
+    meta(name="robots", content="index, follow")
+    meta(name="googlebot", content="index, follow")
+    meta(name="application-name", content="Whatsapp Web View")
+    meta(name="twitter:card", content="summary_large_image")
+    meta(name="twitter:title", content="Whatsapp Web View")
+    meta(name="twitter:description", content="Whatsapp Web View")
+    meta(name="twitter:image", content="https://open-whatsapp-web.gerson-ruiz.com/cover-page.webp")
+    meta(property="og:type", content="website")
+    meta(property="og:title", content="Whatsapp Web View")
+    meta(property="og:description", content="Whatsapp Web View by Gerson Ruiz")
+    meta(property="og:site_name", content="Whatsapp Web View")
+    meta(property="og:url", content="https://open-whatsapp-web.gerson-ruiz.com/")
+    meta(property="og:image", content="https://open-whatsapp-web.gerson-ruiz.com/cover-page.webp")
+    meta(property="og:image:secure_url", content="https://open-whatsapp-web.gerson-ruiz.com/cover-page.webp")
+    meta(property="og:image:width", content="1200")
+    meta(property="og:image:height", content="630")
+    meta(property="og:locale", content="en_US")
+
+    title Whatsapp Web View | Gerson Ruiz
+
+  body(class="c-[#3b4a54] bg-[#eae6df] h-full w-full overflow-hidden before:content-none before:fixed before:top-0 before:z--1 before:w-full before:h-7.8125rem before:bg-[#00a884]")
+
+    div(class="mx-auto h-full w-full xl:pa-1.25rem xl:max-w-100rem")
+      #app(class="shadow-sm overflow-hidden flex h-full w-full bg-[#f7f8fa] animate-[init_0.3s_cubic-bezier(0.1,0.82,0.25,1)]")
+        #sidebar(class="flex flex-col flex-[0_0_30%] absolute z-1 bg-white h-full w-full left--100% md:relative md:left-0")
+          header(class="flex px-4 py-2 bg-[#f0f2f5]")
+            div(class="grow h-10")
+              a(class="w-10 block" href="https://gerson-ruiz.com", target="_blank", rel="noopener noreferrer")
+                img(class="rounded-full cursor-pointer" src="/img/kato.webp", alt="Gerson Ruiz")
+            div(class="flex items-center h-10")
+              img(class="pa-2 cursor-pointer" src="/img/user-group.svg", alt="User Group")
+              img(class="pa-2 ml-2 cursor-pointer" src="/img/user-stories.svg", alt="User Stories")
+              img(class="pa-2 ml-2 cursor-pointer" src="/img/user-new-chat.svg", alt="New Chat")
+              img(class="pa-2 ml-2 cursor-pointer" src="/img/points-more.svg", alt="More")
+          .flex.flex-col.overflow-hidden
+            div
+              .flex.w-full.pl-3.h-12.items-center
+                div(class="bg-[#f0f2f5] grow flex pa-2 h-9 rounded-2")
+                  img(class="w-5 h-5 mr-3 ml-1 cursor-pointer" src="/img/search.svg", alt="Search")
+                  input(type="text", class="bg-transparent outline-none", placeholder="Search or start new chat")
+                img(class="px-3 cursor-pointer" src="/img/filter.svg", alt="Filter")
+
+            div(class="h-0.25 w-full bg-[#d1d7db]")
+
+            .overflow-auto
+              each chat in chats
+                div(
+                  class="cursor-pointer chat antialiased flex text-sm items-center px-3 transition-colors " + (chat.active ? 'bg-[#f0f2f5]' : 'text-[#B6BCC3] hover:bg-[#f1f2f2]'),
+                  id=chat.active && "sidebar-close"
+                )
+                  img(class="h-12 w-12 object-cover object-center shadow-lg rounded-full" src="/img/" + chat.img, alt=chat.name)
+                  div(class="grow px-4 py-2 truncate " + (chat.active ? 'b-t-0.0625rem b-[#f0f2f5]' : 'b-t-0.0625rem b-[#e9edef]'))
+                    .flex.justify-between
+                      .font-semibold.text-lg.italic #{chat.name}
+                      .text-xs #{chat.date}
+                    .flex
+                      if chat.ownerOfTheLastMessage
+                        img(class="mr-0.5 h-4 self-center" src="/img/check.svg", alt="Check")
+                      .truncate.italic #{chat.lastMessage}
+
+        div(class="flex flex-col grow bg-[#efeae2]")
+          .flex.w-full
+            div(class="w-0.25 h-full bg-[#d1d7db]")
+            header(class="flex px-4 py-2 flex-1 bg-[#f0f2f5]")
+              
+              div(class="grow flex items-center h-10")
+                button(id="sidebar-open" class="mr-4 md:hidden")
+                  img(class="pa-2 rounded-full hover:bg-[rgba(0,0,0,0.1)] transition-colors" src="/img/navigation.svg", alt="Toggle")
+                img(class="w-10 mr-4" src="/img/user-img.svg", alt="User Image")
+                div(class="text-base font-normal c-[#111b21]") Recruiter
+              div(class="flex items-center h-10")
+                img(class="pa-2 cursor-pointer" src="/img/search.svg", alt="Search")
+                img(class="pa-2 cursor-pointer" src="/img/points-more.svg", alt="More")
+
+          div(class="flex flex-col h-full overflow-y-auto pt-3 relative")
+
+            div(class="w-full h-full top-0 bg-[url(/img/bg-chat.png)] absolute opacity-40 z-0")
+
+            div(class="w-full h-auto px-9% mb-3")
+              .flex.justify-center
+                div(class="px-3 py-2 rounded-2 text-3 bg-[rgba(255,255,255,0.95)] shadow-[0_0.0625rem_0.0625rem_rgba(11,20,26,0.13)]")
+                  | HOY
+
+            each message in currentChat
+              div(class="w-full h-auto px-9% mb-3 relative " + (message.owner ? 'current-chat-owner' : 'current-chat'))
+                div(class="flex whitespace-pre-wrap " + (message.owner ? 'justify-end' : 'justify-start'))
+                  div(class=[
+                    "flex pa-2 rounded-2 text-sm max-w-65% shadow-[0_0.0625rem_0.0625rem_rgba(11,20,26,0.13)] relative",
+                    "before:content-none before:absolute before:top-0 before:b-b-0 before:b-t-0.75rem " + (message.owner ? 'bg-[#d9fdd3] rounded-tr-0 before:b-l-0 before:b-r-0.5rem before:right--0.5rem before:b-t-[#d9fdd3]' : 'bg-white rounded-tl-0 before:b-r-0 before:b-l-0.5rem before:left--0.5rem before:b-t-white')
+                  ])
+                    | #{message.msg}
+                    if message.owner
+                      img(class="ml-2 h-4 top-1 relative self-end" src="/img/check.svg", alt="Check")
+
+          div(class="flex bg-[#f0f2f5] px-4 py-2")
+            img(class="w-7 mr-2" src="/img/emoji.svg", alt="Emojis")
+            img(class="w-10 pa-2" src="/img/file.svg", alt="Emojis")
+            div(class="px-4 py-2 mx-1.5 my-2 rounded-2 bg-white w-full")
+              input(type="text" class="bg-transparent outline-none w-full " placeholder="Type a message")
+            img(class="w-10 pa-2" src="/img/microphone.svg", alt="Microphone")
+    script(type="module" src="/src/main.ts")
